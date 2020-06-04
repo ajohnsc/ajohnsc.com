@@ -187,7 +187,7 @@ UUID=0a5d8118-e51f-46a0-a03f-6698ad00bd82	none      	swap      	defaults  	0 0
 
 To configure the new installation we need to `chroot` in `/mnt`, use `arch-chroot` to do that.
 ```
-root@archiso ~ # /mnt
+root@archiso ~ # arch-chroot /mnt
 [root@archiso]#
 ```
 
@@ -205,7 +205,7 @@ Configure the system language by editing `/etc/locale.gen`,use "en_US.UTF-8 UTF-
 
 Generate the system language layout.
 ```
-[root@archiso]# echo LANG=en_US.UTF-8 > /etc/locale.conf
+[root@archiso]# locale-gen
 ```
 
 Configure persistently your system language and use it.
