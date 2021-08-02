@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <base href="https://ajohnsc.com">
+    <title> Installing Arch Linux (November 2019) </title>
+    <link rel="canonical" href="https://ajohnsc.com/post/installing-arch-linux-november-2019/">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="alternate" type="application/rss+xml" href="https://ajohnsc.comindex.xml" title="AJCanlas">
+
+    
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/singular.min.011ac04cdcc95d18a28fa60ea533fd3c30de4c726107ef0be63a9d6691c00bdf.css" integrity="sha256-ARrATNzJXRiij6YOpTP9PDDeTHJhB&#43;8L5jqdZpHAC98=" crossorigin="anonymous" media="screen" />
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400i%2C700%2C700i%2C800%2C800i&subset=latin%2Clatin-ext' rel='stylesheet'>
+
+    <link rel="stylesheet" href=/css/custom.css media="screen">
+
+    
+
+    
+  
+
+
+</head>
+<body><header id="masthead" class="site-header">
+  <div class="site-header__branding site-branding">
+
+    <div class="site-branding__logo site-logo site-logo--rounded">
+      <a class="custom-logo-link" rel="home" itemprop="url" href="">
+        <img width="96" height="96" src="/images/icon.png">
+      </a>
+    </div>
+
+    <div class="site-branding__copy">
+      <h1 class="site-title"><a href="/" rel="home">AJCanlas</a></h1>
+      <p class="site-description">Join AJ in his adventure to the exciting world of innovative technologies</p>
+    </div>
+
+  </div>
+</header>
+<div class="site-main content">
+<article>
+  <header class="entry-header">
+    <h1 class="entry-title">Installing Arch Linux (November 2019)</h1>
+  </header>
+
+    <div class="entry-meta entry-meta-before-content">
+      <span class="entry-meta-item posted-on">
+        <a href="https://ajohnsc.com/post/installing-arch-linux-november-2019/">
+          <time class="entry-date published" datetime="2019-11-19T00:00:00&#43;0000">November 19, 2019</time>
+        </a>
+      </span>
+    </div>
+
+	<div class="entry-content">
+    <h1 id="test-the-old-stuff">Test the old stuff</h1>
+<p>I was bombarded by buzz words of today, Going from creating OpenStack Queens architectures for Telcos, VMWare+VSan sizing for banks, and educating my partners and customers to Kubernetes platforms such as PKS and OpenShift.</p>
+<p>Then I looked back on how is the old stuff going on, when I started my journey in systems administration, I was facinated in installing Arch Linux, it was a great challenge back then on how to install it and tried to do it again today.</p>
+<h2 id="installing-arch-linux-in-kvm">Installing Arch Linux in KVM</h2>
+<p>This is the VM requirements:</p>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Needed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vCPU</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Ram</td>
+<td>2 GiB</td>
+</tr>
+<tr>
+<td>Disk</td>
+<td>10 GiB</td>
+</tr>
+</tbody>
+</table>
+<p>First step is to boot the ISO of Arch</p>
+<p>upon booting please choose <code>Boot Arch Linux (x86_64)</code></p>
+<p>Then try if you can reach the internet since Arch needs to have internet later</p>
+<pre><code>root@archiso ~ # ping ajohnsc.github.io -c 4
+</code></pre><p>Then partition your disk with this scheme:</p>
+<table>
+<thead>
+<tr>
+<th>Disk partition</th>
+<th>Mount Point</th>
+<th>Size (in GiB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/dev/vda1</td>
+<td>/</td>
+<td>8</td>
+</tr>
+<tr>
+<td>/dev/vda2</td>
+<td>/boot</td>
+<td>1</td>
+</tr>
+<tr>
+<td>/dev/vda3</td>
+<td>swap</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Then format them to their appropriate file system</p>
+<pre><code>root@archiso ~ # mkfs.ext4 /dev/vda1
+root@archiso ~ # mkfs.ext2 /dev/vda2
+root@archiso ~ # mkswap /dev/vda3
+</code></pre><p>After that mount it to <code>/mnt</code> as <code>/</code> if the directory is not available create it</p>
+<pre><code>root@archiso ~ # mount /dev/vda1 /mnt
+root@archiso ~ # mkdir -p /mnt/boot
+root@archiso ~ # mount /dev/vda2 /mnt/boot
+root@archiso ~ # swapon /dev/vda3
+</code></pre><p>Next is to install the base OS in <code>/mnt</code></p>
+<pre><code>root@archiso ~ # pacstrap -i /mnt base base-devel
+</code></pre><p>It will take some time</p>
+<p>After the base installation we need to generate the fstab</p>
+<pre><code>root@archiso ~ # genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+</code></pre><p>Then change root to <code>/mnt</code></p>
+<pre><code>root@archiso ~ # arch-chroot /mnt
+</code></pre><p>Adjust your time zone</p>
+<pre><code>[root@archiso /]#  ln -sf /usr/share/zoneinfo/Asia/Manila /etc/localtime
+</code></pre><p>Sync your time</p>
+<pre><code>[root@archiso /]# hwclock --systohc
+</code></pre><p>Edit <code>/etc/locale.gen</code> to uncomment <code>en_US.UTF-8</code> in my case for your locale then sync your locale</p>
+<pre><code>[root@archiso /]# vim /etc/locale.gen
+[root@archiso /]# locale-gen
+</code></pre><p>For best practice the kernel needs to have <code>LANG</code> variable and set it in your locale</p>
+<pre><code>[root@archiso /]# echo &quot;LANG=en_US.UTF-8&quot; &gt;&gt; /etc/locale.conf
+</code></pre><p>Change your root password</p>
+<pre><code>[root@archiso /]# passwd
+</code></pre><p>Add the hostname</p>
+<pre><code>[root@archiso /]# echo &quot;ArchLinux&quot; &gt;&gt; /etc/hostname
+</code></pre><p>Install the Linux Kernel</p>
+<pre><code>[root@archiso /]# pacman -Sy linux
+</code></pre><p>The install grub to <code>/dev/vda</code></p>
+<pre><code>[root@archiso /]# pacman -S grub
+[root@archiso /]# grub-install /dev/vda
+[root@archiso /]# grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre><p>For us to configure the interface</p>
+<pre><code>#Check your interface
+[root@archiso /]#  ip link
+[root@archiso /]# vim /etc/systemd/network/enp1s0.network
+
+[Match]
+name=en*
+[Network]
+DHCP=yes
+</code></pre><p>Save and exit vim</p>
+<p>Restart and enable the systemd-netwokd</p>
+<pre><code>[root@archiso /]#  systemctl restart systemd-networkd
+[root@archiso /]#  systemctl enable systemd-networkd
+</code></pre><p>Then reboot the system</p>
+<pre><code>[root@archiso /]#  exit
+root@archiso ~ # reboot
+</code></pre><h2 id="you-have-successfully-installed-arch-in-kvm">You have successfully installed Arch in KVM</h2>
+
+  </div>
+
+  
+  <nav class="navigation post-navigation" role="navigation" aria-label="Posts navigation">
+    <h2 class="screen-reader-text">Posts navigation</h2>
+    <div class="nav-links">
+      
+      <div class="nav-nxt">
+        <span>Newer Post </span>
+        <a href="https://ajohnsc.com/post/notify-me-using-ansible/" rel="next">Notify me using Ansible!</a>
+      </div>
+      
+      
+      <div class="nav-pre">
+        <span>Older Post </span>
+        <a href="https://ajohnsc.com/post/first-blog/" rel="prev">First Blog</a>
+      </div>
+      
+    </div>
+  </nav>
+  
+
+</article>
+
+        </div><footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-footer__copy site-copy">
+    
+  </div>
+</footer>
+</body>
+</html>

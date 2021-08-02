@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AJCanlas</title>
+    <link>https://ajohnsc.com/</link>
+    <description>Recent content on AJCanlas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 13 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ajohnsc.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arch Linux as your Day-to-day Desktop (2020)</title>
+      <link>https://ajohnsc.com/post/arch-linux-as-your-day-to-day-desktop-2020/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ajohnsc.com/post/arch-linux-as-your-day-to-day-desktop-2020/</guid>
+      <description>Linux Distribution Hunt I&amp;rsquo;m using Linux distribution for my day to day life, I started to use Linux distribution fully as my primary and only OS in 2017 at work, it was hard to migrate from Windows though I have been using Linux in VMs I never thoughy using it as my Daily driver.
+To be honest it was a fun switch and exciting adventure, I started to use Fedora 28, back it was smooth and encourage everyone on my team to try it.</description>
+    </item>
+    
+    <item>
+      <title>Disposable K8s cluster in Google Cloud</title>
+      <link>https://ajohnsc.com/post/disposable-k8s-cluster-in-google-cloud/</link>
+      <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ajohnsc.com/post/disposable-k8s-cluster-in-google-cloud/</guid>
+      <description>Hello world again ! It&amp;rsquo;s been more than a month, I had a struggle in using my previous theme, It begins to be buggy if you have more than 5 posts, thus I had to migrate my contents in a new theme and nothing beats simple.
+I&amp;rsquo;ve been playing with kubernetes latley and it&amp;rsquo;s a fun experience, however creating an environment for me to play and destroy it afterwards like a disposable cluster.</description>
+    </item>
+    
+    <item>
+      <title>Ansible QuickStart</title>
+      <link>https://ajohnsc.com/post/ansible-quickstart/</link>
+      <pubDate>Sun, 09 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ajohnsc.com/post/ansible-quickstart/</guid>
+      <description>Finding Inspiration For almost a month I looked for something to write about, and sometimes it was the most obvious things.
+Last Saturday, I gave some overview of Ansible to students with great potentials, some are new and some already has good grasp in Linux thus teaching was easy.
+Then I promised them to for me to send notes about our discussion and here it is..
+What is Ansible? So Ansible is an Automation tool that is Highly accepted in the industry today, It is bought and maintained now by Red Hat with a big community.</description>
+    </item>
+    
+    <item>
+      <title>Present like a coder</title>
+      <link>https://ajohnsc.com/post/present-like-a-coder/</link>
+      <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ajohnsc.com/post/present-like-a-coder/</guid>
+      <description>It took a long a looong time This and last month was very busy and didn&amp;rsquo;t post anything for a long time due to Christmas , New year holidays and the Holiday grinds we have.
+To be honest, I really don&amp;rsquo;t have anything to talk to also since it was a season of celebration and making things good.
+But today I stumbled upon a gem on making presentations, ussualy I use Google Slides or Powerpoint to present in my talks, however I find it very boring since it is really static and flaky (if flaky is a real word), I use Prezi before but the problem with Prezi it is a paid service to use.</description>
+    </item>
+    
+    <item>
+      <title>K3s Cluster using Ansible and Vagrant</title>
+      <link>https://ajohnsc.com/post/k3s-cluster-using-ansible-and-vagrant/</link>
+      <pubDate>Sat, 30 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ajohnsc.com/post/k3s-cluster-using-ansible-and-vagrant/</guid>
+      <description>Rest time From a long work week finally got rest since I don&amp;rsquo;t have any classes this saturday that gave me a lot of time to rest.
+While i&amp;rsquo;m at it, stumbled upon a cool project called K3s it is a lightweight kubernetes project by Rancher so while resting I will try to install it with Vagrant VMs and Ansible
+Vagrant for ease Vagrant is a tool made by Hashicorp to provision VMs in any provider, in my case I will use VirtualBox.</description>
+    </item>
+    
+    <item>
+      <title>Notify me using Ansible!</title>
+      <link>https://ajohnsc.com/post/notify-me-using-ansible/</link>
+      <pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ajohnsc.com/post/notify-me-using-ansible/</guid>
+      <description>Waiting moment One of my friend from office took a Red hat examination, all of us in the team are all excited for him to pass.
+However it took a while for him to get the results, thus all of us are waiting.
+But I don&amp;rsquo;t want to wait in Red hat&amp;rsquo;s verify site if he already passed, therefore I thought on how to automate it and use Ansible for it.</description>
+    </item>
+    
+    <item>
+      <title>Installing Arch Linux (November 2019)</title>
+      <link>https://ajohnsc.com/post/installing-arch-linux-november-2019/</link>
+      <pubDate>Tue, 19 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ajohnsc.com/post/installing-arch-linux-november-2019/</guid>
+      <description>Test the old stuff I was bombarded by buzz words of today, Going from creating OpenStack Queens architectures for Telcos, VMWare+VSan sizing for banks, and educating my partners and customers to Kubernetes platforms such as PKS and OpenShift.
+Then I looked back on how is the old stuff going on, when I started my journey in systems administration, I was facinated in installing Arch Linux, it was a great challenge back then on how to install it and tried to do it again today.</description>
+    </item>
+    
+    <item>
+      <title>First Blog</title>
+      <link>https://ajohnsc.com/post/first-blog/</link>
+      <pubDate>Sat, 02 Nov 2019 09:44:04 +0800</pubDate>
+      
+      <guid>https://ajohnsc.com/post/first-blog/</guid>
+      <description>Hello World! I want to embark in a journey of docummenting everything that I do. this might help me how to use this stuff moving forward.
+Today I just tried on how to install Jekyll in a Centos/7 First we need to install the latest Ruby
+Install all the requirements
+[root@localhost] yum install gcc-c++ patch readline readline-devel zlib zlib-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison iconv-devel sqlite-devel Then install RVM</description>
+    </item>
+    
+  </channel>
+</rss>
