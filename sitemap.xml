@@ -3,12 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ajohnsc.com/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-08-02T14:42:44+08:00</lastmod>
   </url><url>
-    <loc>https://ajohnsc.com/post/arch-linux-as-your-day-to-day-desktop-2020/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+    <loc>https://ajohnsc.com/post/migrate-from-jekyll-to-hugo/</loc>
+    <lastmod>2021-08-02T14:42:44+08:00</lastmod>
   </url><url>
     <loc>https://ajohnsc.com/post/</loc>
+    <lastmod>2021-08-02T14:42:44+08:00</lastmod>
+  </url><url>
+    <loc>https://ajohnsc.com/post/arch-linux-as-your-day-to-day-desktop-2020/</loc>
     <lastmod>2020-05-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ajohnsc.com/post/disposable-k8s-cluster-in-google-cloud/</loc>

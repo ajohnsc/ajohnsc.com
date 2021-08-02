@@ -6,7 +6,18 @@
     <description>Recent content on AJCanlas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ajohnsc.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Aug 2021 14:42:44 +0800</lastBuildDate><atom:link href="https://ajohnsc.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Migrate From Jekyll to Hugo</title>
+      <link>https://ajohnsc.com/post/migrate-from-jekyll-to-hugo/</link>
+      <pubDate>Mon, 02 Aug 2021 14:42:44 +0800</pubDate>
+      
+      <guid>https://ajohnsc.com/post/migrate-from-jekyll-to-hugo/</guid>
+      <description>It took more than a year! Aside from my blogs in Opensource.com I tried to update this blog, but I had trouble with Jekyll:
+1.) Hard to update: I&amp;rsquo;ve used Jekyll since 2017, but I got to delete my old post due to deprecation errors which broke the blog in the long run, updating Jekyll made more hardwork into maintaining Jekyll than making the blog work.
+2.) Themes are hard to find: Many will say Jekyll themes are everywhere, but not all of them will work with the versions that we are working on, therefore there might themes that don&amp;rsquo;t work even you try it, and as your theme deprecate your blog will be hard to maintain.</description>
+    </item>
+    
     <item>
       <title>Arch Linux as your Day-to-day Desktop (2020)</title>
       <link>https://ajohnsc.com/post/arch-linux-as-your-day-to-day-desktop-2020/</link>
